@@ -104,7 +104,7 @@
 								<div class="kt-login__head">
 									<h3 class="kt-login__title">Connecter Vous</h3>
 								</div>
-								<form class="kt-form" method="POST" action="{{ URL('/login') }}">
+								<form class="kt-form" method="POST" action="{{/* URL('/login') */}}">
 									{{ csrf_field() }}
 									@if($status = Session::get('statuslogin'))
 										<div class="alert alert-danger" role="alert">
@@ -129,7 +129,7 @@
 										</div>
 									</div>
 									<div class="kt-login__actions">
-										<button type="submite" class="btn btn-pill kt-login__btn-primary">Connecter</button>
+										<a href="#" class="btn btn-pill kt-login__btn-primary">Connecter</a>
 									</div>
 								</form>
 							</div>

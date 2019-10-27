@@ -50,9 +50,11 @@ class LoginController extends Controller
         if(Auth::guard('web')->attempt(['username'=> $request->username , 'password' =>$request->password],$request->remember)){
            
             $this->middleware('guest:web');
-            return redirect()->intended('dashboard');
+            //return redirect()->intended('dashboard');
+            return response()->json(true);
         }else   {
-            return  redirect()->back()->with('statuslogin', 'veuillez vérifier  votre usermame ou mote de pass svp !'); 
+            return response()->json(false);
+            //return  redirect()->back()->with('statuslogin', 'veuillez vérifier  votre usermame ou mote de pass svp !'); 
         }
         
     }
